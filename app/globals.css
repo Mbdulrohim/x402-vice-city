@@ -6,8 +6,10 @@
   --background: #000000;
   --foreground: #ffffff;
   --neon-blue: #00d9ff;
+  --neon-cyan: #00d9ff;
   --neon-purple: #b829ff;
-  --neon-pink: #ff006e;
+  --neon-pink: #ff00cc;
+  --neon-orange: #ffaa00;
   --neon-green: #39ff14;
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
