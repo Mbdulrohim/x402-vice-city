@@ -57,9 +57,8 @@ export function TrafficFlow() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
+          args={[particles.positions, 3]}
           count={particleCount}
-          array={particles.positions}
-          itemSize={3}
         />
       </bufferGeometry>
       <pointsMaterial
