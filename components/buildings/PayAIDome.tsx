@@ -20,9 +20,8 @@ export function PayAIDome(props: any) {
     }
 
     if (logoRef.current) {
-      // Float and rotate logo
+      // Float logo (no rotation)
       logoRef.current.position.y = 45 + Math.sin(t) * 2;
-      logoRef.current.rotation.y = t * 0.5;
     }
 
     if (ringRef.current) {
@@ -33,18 +32,6 @@ export function PayAIDome(props: any) {
 
   return (
     <group {...props}>
-      {/* Wembley Arch - Iconic Landmark */}
-      <mesh position={[0, 60, -20]} rotation={[0, 0, Math.PI / 2]}>
-        <torusGeometry args={[80, 2, 16, 100, Math.PI]} />
-        <meshStandardMaterial
-          color="#00d9ff"
-          emissive="#00d9ff"
-          emissiveIntensity={2}
-          roughness={0.2}
-          metalness={1}
-        />
-      </mesh>
-
       {/* Stadium Bowl - Exterior */}
       <mesh position={[0, 0, 0]} rotation={[Math.PI, 0, 0]}>
         <cylinderGeometry args={[55, 45, 25, 64, 1, true]} />

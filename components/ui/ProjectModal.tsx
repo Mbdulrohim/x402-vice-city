@@ -212,7 +212,9 @@ export function ProjectModal() {
                         }}
                       />
 
-                      <div className="relative z-10 flex flex-col gap-8 p-12 lg:p-14">
+                      {/* Inner Content Container */}
+                      <div className="relative z-10 flex flex-col gap-6 p-6 lg:p-8">
+                        {/* Logo and Name - Side by Side */}
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:gap-8">
                           <div
                             className={`relative flex-shrink-0 flex items-center justify-center w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-black/40 shadow-inner ${theme.glow} border border-white/5 overflow-hidden p-4`}
@@ -259,7 +261,7 @@ export function ProjectModal() {
                       <div className="absolute inset-x-8 top-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
                       {/* Inner Content Container */}
-                      <div className="relative z-10 flex flex-col gap-8 p-12 lg:p-14">
+                      <div className="relative z-10 flex flex-col gap-6 p-6 lg:p-8">
                         <div className="flex flex-col gap-4 px-2">
                           <div className="font-space flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.2em] text-white/50">
                             <span className="break-all">{displayUrl}</span>

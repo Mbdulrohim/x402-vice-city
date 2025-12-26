@@ -12,6 +12,9 @@ import { PalmTree } from "@/components/env/PalmTree";
 import { AnimatedBackground } from "@/components/env/AnimatedBackground";
 import { PlazaClock } from "@/components/env/PlazaClock";
 import { PayAIDome } from "@/components/buildings/PayAIDome";
+import { MovingTraffic } from "@/components/env/MovingTraffic";
+import { Monorail } from "@/components/env/Monorail";
+import { FloatingClouds } from "@/components/env/Clouds";
 import { useCityStore } from "@/store/cityStore";
 import * as THREE from "three";
 import {
@@ -174,6 +177,10 @@ export function Scene() {
           <meshBasicMaterial color="#ffffff" />
         </mesh>
       </group>
+      {/* Living City Elements */}
+      <MovingTraffic />
+      <Monorail />
+      <FloatingClouds />
       <Decorations />
       {/* <AnimatedBackground /> */}
       <PlazaClock />

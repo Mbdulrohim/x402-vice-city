@@ -23,9 +23,8 @@
   --glass-border: rgba(255, 255, 255, 0.1);
 }
 
+/* Global reset is handled by Tailwind Preflight, removing manual * reset to avoid conflicts */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
