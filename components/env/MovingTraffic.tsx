@@ -56,13 +56,16 @@ function Car({
         <meshBasicMaterial color="#ff0000" /> {/* Red taillights */}
       </mesh>
 
-      {/* Underglow */}
-      <pointLight
-        position={[0, -0.5, 0]}
-        distance={8}
-        intensity={2}
-        color={color}
-      />
+      {/* Underglow - Fake Glow using Plane */}
+      <mesh position={[0, -0.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[3, 6]} />
+        <meshBasicMaterial
+          color={color}
+          transparent
+          opacity={0.3}
+          side={THREE.DoubleSide}
+        />
+      </mesh>
     </group>
   );
 }

@@ -3,6 +3,15 @@
 import { useMemo } from "react";
 import * as THREE from "three";
 
+const trunkCurve = new THREE.CatmullRomCurve3([
+  new THREE.Vector3(0, 0, 0),
+  new THREE.Vector3(1, 4, 1),
+  new THREE.Vector3(2, 8, 2),
+  new THREE.Vector3(2.5, 12, 2.5),
+]);
+
+const trunkGeometry = new THREE.TubeGeometry(trunkCurve, 20, 0.4, 8, false);
+
 export function PalmTree({
   position,
   scale = 1,
@@ -12,17 +21,6 @@ export function PalmTree({
   scale?: number;
   rotation?: [number, number, number];
 }) {
-  const trunkCurve = useMemo(() => {
-    // Create a slight curve for the trunk
-    const curve = new THREE.CatmullRomCurve3([
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(1, 4, 1),
-      new THREE.Vector3(2, 8, 2),
-      new THREE.Vector3(2.5, 12, 2.5),
-    ]);
-    return curve;
-  }, []);
-
   const leaves = useMemo(() => {
     return Array.from({ length: 9 }).map((_, i) => ({
       rotation: [Math.PI / 4, (i / 9) * Math.PI * 2, 0],
@@ -38,8 +36,7 @@ export function PalmTree({
       {/* Trunk - Using a TubeGeometry for curve, or simple cylinders for ease.
           Let's use a simple detailed cylinder bent via rotation logic or just a Tube.
           Tube is easy. */}
-      <mesh castShadow>
-        <tubeGeometry args={[trunkCurve, 20, 0.4, 8, false]} />
+      <mesh castShadow geometry={trunkGeometry}>
         <meshStandardMaterial color="#8B4513" roughness={0.8} />
       </mesh>
 

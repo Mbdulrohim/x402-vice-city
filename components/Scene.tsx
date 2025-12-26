@@ -106,7 +106,7 @@ function CameraController() {
 
 const Decorations = () => {
   const trees = [];
-  for (let z = -50; z < 1400; z += 40) {
+  for (let z = -50; z < 1400; z += 60) {
     trees.push(
       <PalmTree
         key={`left-${z}`}
@@ -140,6 +140,7 @@ export function Scene() {
         intensity={1.5}
         color="#ffaa00"
         castShadow
+        shadow-mapSize={[1024, 1024]}
       />{" "}
       <pointLight
         position={[0, 20, 0]}
@@ -204,7 +205,7 @@ export function Scene() {
           <IntegrationAvenue />
         </group>
       </Suspense>
-      <EffectComposer>
+      <EffectComposer multisampling={0}>
         <Bloom
           luminanceThreshold={0.5}
           luminanceSmoothing={0.9}
