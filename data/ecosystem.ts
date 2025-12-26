@@ -24,7 +24,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Best-in-class x402 facilitator. Fee-free USDC settlement on Base Mainnet. KYT/OFAC checks on every transaction.",
     category: "facilitator",
-    website: "https://x402.org/ecosystem",
+    website: "https://cdp.coinbase.com",
     logoPath: "/logos/facilitators/cdp.png",
   },
   {
@@ -33,7 +33,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "A production grade facilitator which supports multi-network, multi-token, multi-payment schemes.",
     category: "facilitator",
-    website: "https://x402.org/ecosystem",
+    website: "https://corbits.xyz",
     logoPath: "/logos/facilitators/corbits.png",
   },
   {
@@ -42,7 +42,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "A free, developer-focused, production-ready facilitator for x402 payments. Use it instantly online, or launch your own Docker image in seconds.",
     category: "facilitator",
-    website: "https://x402.org/ecosystem",
+    website: "https://mogami.dev",
     logoPath: "/logos/facilitators/mogami.png",
   },
   {
@@ -51,7 +51,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "The first permissionless, gasless and omnichain x402 facilitator that any x402 server can use without login.",
     category: "facilitator",
-    website: "https://x402.org/ecosystem",
+    website: "https://openx402.ai",
     logoPath: "/logos/facilitators/openx402.png",
   },
   {
@@ -60,7 +60,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Treasure x402 Facilitator available on Base and Base Sepolia. Supports EIP-3009 compliant tokens including USDC, MAGIC, SMOL, MIO, AI Frens tokens, and more.",
     category: "facilitator",
-    website: "https://x402.org/ecosystem",
+    website: "https://treasure.lol",
     logoPath: "/logos/facilitators/treasure.png",
   },
   {
@@ -69,7 +69,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "AWE World.fun's x402 Facilitator enables fee-free EIP-3009 payments in USDC and other ERC-20 tokens, handling verification and settlement on Base.",
     category: "facilitator",
-    website: "https://x402.org/ecosystem",
+    website: "https://world.fun",
     logoPath: "/logos/facilitators/worldfun.svg",
   },
   {
@@ -86,7 +86,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Independent, open-source facilitator in Rust. Easy to self-host, extend to new networks, or use via our hosted instance.",
     category: "facilitator",
-    website: "https://x402.org/ecosystem",
+    website: "https://x402.rs",
     logoPath: "/logos/facilitators/x402rs.svg",
   },
 
@@ -97,7 +97,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "The omnichain settlement layer that enables AI agents to seamlessly pay millions of real-world merchants across SEA, LATAM, and Africa — powered by x402 and USDC.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://aeon.xyz",
     logoPath: "/logos/services/aeon.png",
   },
   {
@@ -106,7 +106,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Through a permissionless API, pay-per-inference via x402, and agent-native interface, AiMo Network connects humans, AI agents, and service providers without censorship, borders, or gatekeepers.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://aimo.net",
     logoPath: "/logos/services/aimo.png",
   },
   {
@@ -115,7 +115,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "A resource marketplace aggregating core assets such as LLMs, data APIs based on the HTTP 402 standard.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://aisa.io",
     logoPath: "/logos/services/aisa.png",
   },
   {
@@ -124,7 +124,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "AI agents hosting and Tooling Platform, with MCP, smartWallets, OpenAI API compatibility and X402 support.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://aurracloud.com",
     logoPath: "/logos/services/aurracloud.png",
   },
   {
@@ -133,7 +133,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "DeFi API endpoints with x402 micropayments. Access portfolio data, token prices, swap quotes, wallet analytics, yield suggestions, and more - pay per request with USDC on Base.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://elsa.finance",
     logoPath: "/logos/services/elsa.png",
   },
   {
@@ -151,7 +151,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Gloria is an AI-powered provider of real-time, high-signal, customizable news data to AI agents and agent systems that need structured signals for any use case.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://gloria.ai",
     logoPath: "/logos/services/gloria.png",
   },
   {
@@ -160,7 +160,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "A unified API you can /fund using x402 to /tip anyone on the internet.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://grove.dev",
     logoPath: "/logos/services/grove.png",
   },
   {
@@ -169,7 +169,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "The first Web3 native AI research platform powered by x402. Users can pay per-query with USDC to get comprehensive multi-page research reports generated by AI agents.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://heurist.ai",
     logoPath: "/logos/services/heurist-research.png",
   },
   {
@@ -178,7 +178,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Coin it once, remix forever. Use our API to generate media using templates.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://imagine.art",
     logoPath: "/logos/services/imagine.png",
   },
   {
@@ -187,7 +187,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Fetch rich, structured metadata and clean, token-efficient content summaries from web pages with pay-as-you-go micropayments.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://minifetch.com",
     logoPath: "/logos/services/minifetch.svg",
   },
   {
@@ -205,7 +205,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Onchain is x402's Intelligent Intermediary Layer for Aggregating Facilitators.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://onchain.xyz",
     logoPath: "/logos/services/onchain.png",
   },
   {
@@ -214,7 +214,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "AI-powered crypto intelligence for Agents and Pros. Real-time crypto news, token analysis, market alpha signals, and AI tools via USDC on Base.",
     category: "service",
-    website: "https://x402.org/ecosystem",
+    website: "https://otto.bot",
     logoPath: "/logos/services/otto.png",
   },
   {
