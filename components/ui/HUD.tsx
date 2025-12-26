@@ -8,23 +8,23 @@ export function HUD() {
   return (
     <div className="fixed inset-0 pointer-events-none z-10">
       {/* Top Left - Logo and Title */}
-      <div className="absolute top-6 left-6 pointer-events-auto">
-        <div className="glass p-6 pr-12">
+      <div className="absolute top-4 left-4 md:top-6 md:left-6 pointer-events-auto">
+        <div className="glass p-4 md:p-6 pr-8 md:pr-12">
           <h1
-            className="text-2xl font-bold font-carter"
+            className="text-xl md:text-2xl font-bold font-carter"
             style={{ fontFamily: "var(--font-carter)" }}
           >
             <span className="text-white">x</span>
-            <span className="text-[#ff00cc] text-3xl">402</span>
+            <span className="text-[#ff00cc] text-2xl md:text-3xl">402</span>
             <span
-              className="text-gray-400 text-sm ml-2 font-montserrat"
+              className="text-gray-400 text-xs md:text-sm ml-2 font-montserrat"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
               City
             </span>
           </h1>
           <p
-            className="text-xs text-gray-400 mt-1 font-montserrat"
+            className="text-[10px] md:text-xs text-gray-400 mt-1 font-montserrat"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Explore the Ecosystem
@@ -32,8 +32,8 @@ export function HUD() {
         </div>
       </div>
 
-      {/* Top Right - Stats */}
-      <div className="absolute top-6 right-6 pointer-events-auto">
+      {/* Top Right - Stats (Desktop Only) */}
+      <div className="hidden md:block absolute top-6 right-6 pointer-events-auto">
         <div className="glass p-6 min-w-[280px]">
           <h3
             className="text-xs text-gray-400 uppercase mb-4 font-montserrat tracking-wider"
@@ -90,8 +90,8 @@ export function HUD() {
         </div>
       </div>
 
-      {/* Bottom Left - Navigation Hints */}
-      <div className="absolute bottom-6 left-6 pointer-events-auto">
+      {/* Bottom Left - Navigation Hints (Desktop Only) */}
+      <div className="hidden md:block absolute bottom-6 left-6 pointer-events-auto">
         <div
           className="glass p-6 text-sm text-gray-400 font-montserrat space-y-2 min-w-[200px]"
           style={{ fontFamily: "var(--font-montserrat)" }}
@@ -103,16 +103,16 @@ export function HUD() {
         </div>
       </div>
 
-      {/* Bottom Right - District Labels */}
-      <div className="absolute bottom-6 right-6 pointer-events-auto">
-        <div className="glass p-6 w-[320px] rounded-xl backdrop-blur-md bg-black/60 border border-white/10">
+      {/* District Labels - Bottom Right Desktop / Bottom Center Mobile */}
+      <div className="absolute bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 pointer-events-auto">
+        <div className="glass p-4 md:p-6 w-full md:w-[320px] rounded-xl backdrop-blur-md bg-black/60 border border-white/10">
           <p
-            className="text-xs text-[#00d9ff] uppercase font-bold tracking-widest mb-4 font-montserrat"
+            className="text-[10px] md:text-xs text-[#00d9ff] uppercase font-bold tracking-widest mb-2 md:mb-4 font-montserrat text-center md:text-left"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Select District
           </p>
-          <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-2 md:flex md:flex-col gap-2 md:gap-3">
             {[
               {
                 id: "facilitator-plaza",
@@ -147,7 +147,7 @@ export function HUD() {
                 key={d.id}
                 onClick={() => setCurrentDistrict(d.id)}
                 className={`
-                  relative overflow-hidden w-full text-left px-5 py-4 rounded-lg border transition-all duration-300
+                  relative overflow-hidden w-full text-center md:text-left px-3 py-2 md:px-5 md:py-4 rounded-lg border transition-all duration-300
                   ${d.color}
                   ${
                     currentDistrict === d.id
@@ -158,19 +158,23 @@ export function HUD() {
                   group
                 `}
               >
-                <div className="flex items-center justify-between relative z-10">
+                <div className="flex items-center justify-center md:justify-between relative z-10">
                   <span
-                    className={`font-montserrat text-sm font-medium tracking-wide ${
+                    className={`font-montserrat text-xs md:text-sm font-medium tracking-wide ${
                       currentDistrict === d.id
                         ? "text-white"
                         : "text-gray-300 group-hover:text-white"
                     }`}
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    {d.name}
+                    {d.name
+                      .replace("Facilitator Plaza", "Facilitator")
+                      .replace("Service Skyline", "Services")
+                      .replace("Builder's District", "Builders")
+                      .replace("Integration Avenue", "Integration")}
                   </span>
                   {currentDistrict === d.id && (
-                    <span className="flex h-2 w-2 relative">
+                    <span className="hidden md:flex h-2 w-2 relative">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                     </span>

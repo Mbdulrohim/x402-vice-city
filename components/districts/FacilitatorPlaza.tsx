@@ -6,6 +6,7 @@ import { Text } from "@react-three/drei";
 import { getFacilitators } from "@/data/ecosystem";
 import { Building } from "@/components/buildings/Building";
 import { useCityStore } from "@/store/cityStore";
+import { TrafficGantry } from "@/components/env/TrafficGantry";
 import * as THREE from "three";
 
 export function FacilitatorPlaza() {
@@ -93,17 +94,12 @@ export function FacilitatorPlaza() {
         );
       })}
 
-      {/* Plaza label */}
-      <Text
-        position={[0, 0.1, 50]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        fontSize={6}
-        color="#333333"
-        anchorX="center"
-        anchorY="middle"
-      >
-        FACILITATOR PLAZA
-      </Text>
+      {/* Plaza Gantry Sign */}
+      <TrafficGantry
+        text="FACILITATOR PLAZA"
+        color="#ff00cc"
+        position={[0, 0, 50]}
+      />
     </group>
   );
 }

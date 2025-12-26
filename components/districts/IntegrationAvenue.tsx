@@ -4,6 +4,7 @@ import { Text } from "@react-three/drei";
 import { getIntegrations } from "@/data/ecosystem";
 import { Building } from "@/components/buildings/Building";
 import { useCityStore } from "@/store/cityStore";
+import { TrafficGantry } from "@/components/env/TrafficGantry";
 
 export function IntegrationAvenue() {
   const integrations = getIntegrations();
@@ -49,17 +50,12 @@ export function IntegrationAvenue() {
         );
       })}
 
-      {/* District label */}
-      <Text
-        position={[0, 0.1, 50]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        fontSize={5}
-        color="#333333"
-        anchorX="center"
-        anchorY="middle"
-      >
-        INTEGRATION AVENUE
-      </Text>
+      {/* Integration Avenue Gantry */}
+      <TrafficGantry
+        text="INTEGRATION AVENUE"
+        color="#ff006e"
+        position={[0, 0, 50]}
+      />
     </group>
   );
 }

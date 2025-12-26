@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Suspense } from "react";
 import { FacilitatorPlaza } from "@/components/districts/FacilitatorPlaza";
@@ -27,7 +27,7 @@ import {
 
 // Camera controller that responds to district changes
 function CameraController() {
-  const { camera } = useThree();
+  const { camera, size } = useThree();
   const controlsRef = useRef<any>(null);
   const currentDistrict = useCityStore((state) => state.currentDistrict);
 
@@ -36,7 +36,7 @@ function CameraController() {
     { position: THREE.Vector3; target: THREE.Vector3 }
   > = {
     "facilitator-plaza": {
-      position: new THREE.Vector3(0, 40, 80),
+      position: new THREE.Vector3(4, 12, 139),
       target: new THREE.Vector3(0, 5, 0),
     },
     "service-skyline": {
@@ -61,6 +61,25 @@ function CameraController() {
       const duration = 2000; // 2 seconds
       const startTime = Date.now();
 
+      // Mobile Adjustment
+      const isMobile = size.width < size.height; // Simple portrait check
+      const distMult = isMobile ? 1.5 : 1;
+
+      const targetVec = config.target.clone();
+      const posVec = config.position.clone();
+
+      // Calculate offset from target to position
+      const offset = posVec.sub(targetVec);
+      // Scale offset (move back)
+      offset.multiplyScalar(distMult);
+      // Apply new position
+      const finalPosition = targetVec.clone().add(offset);
+
+      // Lift camera slightly more on mobile to see ground
+      if (isMobile) {
+        finalPosition.y += 20;
+      }
+
       const animate = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
@@ -70,12 +89,12 @@ function CameraController() {
             ? 2 * progress * progress
             : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
-        camera.position.lerpVectors(startPosition, config.position, eased);
+        camera.position.lerpVectors(startPosition, finalPosition, eased);
 
         if (controlsRef.current) {
           controlsRef.current.target.lerpVectors(
             startTarget,
-            config.target,
+            config.target, // Target remains same
             eased
           );
           controlsRef.current.update();
@@ -88,7 +107,7 @@ function CameraController() {
 
       animate();
     }
-  }, [currentDistrict, camera]);
+  }, [currentDistrict, camera, size.width, size.height]);
 
   return (
     <OrbitControls
@@ -98,6 +117,8 @@ function CameraController() {
       enableRotate={true}
       minDistance={10}
       maxDistance={300}
+      minAzimuthAngle={-Math.PI / 4} // Restrict left rotation (45 deg)
+      maxAzimuthAngle={Math.PI / 4} // Restrict right rotation (45 deg)
       maxPolarAngle={Math.PI / 2 - 0.05} // Don't go below ground
       autoRotate={false}
     />

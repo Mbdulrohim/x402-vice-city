@@ -4,6 +4,7 @@ import { Text } from "@react-three/drei";
 import { getServices } from "@/data/ecosystem";
 import { Building } from "@/components/buildings/Building";
 import { useCityStore } from "@/store/cityStore";
+import { TrafficGantry } from "@/components/env/TrafficGantry";
 
 export function ServiceSkyline() {
   const services = getServices();
@@ -55,17 +56,12 @@ export function ServiceSkyline() {
         );
       })}
 
-      {/* District label */}
-      <Text
-        position={[0, 0.1, 50]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        fontSize={6}
-        color="#333333"
-        anchorX="center"
-        anchorY="middle"
-      >
-        SERVICE SKYLINE
-      </Text>
+      {/* Service Skyline Gantry */}
+      <TrafficGantry
+        text="SERVICE SKYLINE"
+        color="#00d9ff"
+        position={[0, 0, 50]}
+      />
     </group>
   );
 }

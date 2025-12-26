@@ -44,7 +44,7 @@ export function WelcomeOverlay({ onClose }: WelcomeOverlayProps) {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
         {/* GTA Style Logo */}
         <h1
-          className="text-8xl md:text-9xl font-black mb-8 tracking-tighter drop-shadow-2xl"
+          className="text-5xl md:text-9xl font-black mb-8 tracking-tighter drop-shadow-2xl"
           style={{ fontFamily: "var(--font-carter)" }}
         >
           <span className="text-[#ff00cc] drop-shadow-[0_0_20px_rgba(255,0,204,0.6)]">
@@ -57,7 +57,7 @@ export function WelcomeOverlay({ onClose }: WelcomeOverlayProps) {
 
         <div className="mt-auto mb-20">
           <p
-            className="text-[#ff00cc] text-2xl md:text-3xl font-bold tracking-[0.2em] transition-opacity duration-100 drop-shadow-md"
+            className="text-[#ff00cc] text-xl md:text-3xl font-bold tracking-[0.2em] transition-opacity duration-100 drop-shadow-md"
             style={{
               opacity: blink ? 1 : 0,
               fontFamily: "var(--font-montserrat)",
