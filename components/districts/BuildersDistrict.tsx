@@ -41,6 +41,7 @@ export function BuildersDistrict() {
               anchorX="center"
               anchorY="bottom"
               maxWidth={10}
+              depthOffset={0}
             >
               {project.name}
             </Text>

@@ -41,6 +41,7 @@ export function IntegrationAvenue() {
               anchorX="center"
               anchorY="bottom"
               maxWidth={9}
+              depthOffset={0}
             >
               {project.name}
             </Text>

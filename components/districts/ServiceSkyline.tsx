@@ -47,6 +47,7 @@ export function ServiceSkyline() {
               anchorX="center"
               anchorY="bottom"
               maxWidth={9}
+              depthOffset={0}
             >
               {service.name}
             </Text>

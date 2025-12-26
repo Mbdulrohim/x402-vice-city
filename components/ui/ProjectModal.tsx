@@ -149,12 +149,10 @@ export function ProjectModal() {
             transition={{ type: "spring", stiffness: 220, damping: 28 }}
             className="relative w-full max-w-5xl"
           >
-            {/* Outer Container */}
             <div
               className={`relative w-full max-w-5xl rounded-[32px] border ${theme.border} border-opacity-60 p-1.5 md:p-2 transition-all duration-300`}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Inner Container */}
               <div className="relative w-full overflow-hidden rounded-[24px] bg-black/90 backdrop-blur-2xl p-6 md:p-8 shadow-[0_0_80px_rgba(0,0,0,0.8)]">
                 <div className="absolute -inset-px rounded-[24px] border border-white/10 pointer-events-none" />
                 <div
@@ -186,7 +184,6 @@ export function ProjectModal() {
                 </button>
 
                 <div className="grid gap-10 lg:grid-cols-[1.05fr_1.2fr]">
-                  {/* Left Column - Visuals */}
                   <div
                     className={`relative rounded-3xl border ${theme.border} bg-black/20 p-2 shadow-2xl`}
                   >
@@ -215,9 +212,7 @@ export function ProjectModal() {
                         }}
                       />
 
-                      {/* Inner Content Container */}
                       <div className="relative z-10 flex flex-col gap-8 p-12 lg:p-14">
-                        {/* Logo and Name - Side by Side */}
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:gap-8">
                           <div
                             className={`relative flex-shrink-0 flex items-center justify-center w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-black/40 shadow-inner ${theme.glow} border border-white/5 overflow-hidden p-4`}
@@ -241,12 +236,10 @@ export function ProjectModal() {
                           </div>
                         </div>
 
-                        {/* Tagline */}
                         <p className="font-montserrat text-lg text-white/80 leading-8 px-2">
                           {detail.tagline}
                         </p>
 
-                        {/* Category Badge */}
                         <div className="px-2">
                           <div className="inline-block">
                             <div
@@ -261,7 +254,6 @@ export function ProjectModal() {
                     </div>
                   </div>
 
-                  {/* Right Column - Details */}
                   <div className="relative rounded-3xl border border-white/15 bg-black/20 p-2 overflow-hidden">
                     <div className="relative h-full overflow-hidden rounded-2xl bg-black/80">
                       <div className="absolute inset-x-8 top-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />

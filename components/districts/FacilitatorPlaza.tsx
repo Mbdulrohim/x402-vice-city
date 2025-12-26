@@ -48,6 +48,7 @@ export function FacilitatorPlaza() {
         outlineColor="#000000"
         anchorX="center"
         anchorY="bottom"
+        depthOffset={0}
       >
         PayAI
       </Text>
@@ -84,6 +85,7 @@ export function FacilitatorPlaza() {
               anchorX="center"
               anchorY="bottom"
               maxWidth={10}
+              depthOffset={0}
             >
               {facilitator.name.replace(" Facilitator", "")}
             </Text>
