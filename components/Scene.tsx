@@ -11,6 +11,7 @@ import { IntegrationAvenue } from "@/components/districts/IntegrationAvenue";
 import { PalmTree } from "@/components/env/PalmTree";
 import { AnimatedBackground } from "@/components/env/AnimatedBackground";
 import { PlazaClock } from "@/components/env/PlazaClock";
+import { PayAIDome } from "@/components/buildings/PayAIDome";
 import { useCityStore } from "@/store/cityStore";
 import * as THREE from "three";
 import {
@@ -127,7 +128,7 @@ export function Scene() {
   return (
     <Canvas className="w-full h-screen">
       <PerspectiveCamera makeDefault position={[0, 40, 100]} fov={60} />
-      <fog attach="fog" args={["#87CEEB", 50, 600]} />
+      <fog attach="fog" args={["#87CEEB", 50, 1200]} />
       <color attach="background" args={["#2e0c3a"]} />{" "}
       <color attach="background" args={["#104e8b"]} />
       <ambientLight intensity={0.5} color="#ff00cc" />
@@ -144,10 +145,7 @@ export function Scene() {
         distance={100}
       />{" "}
       <CameraController />
-      <mesh position={[0, 50, -800]}>
-        <sphereGeometry args={[200, 32, 32]} />
-        <meshBasicMaterial color="#ff5500" />
-      </mesh>
+      {/* Sun removed - replaced by PlazaClock */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]} receiveShadow>
         <planeGeometry args={[10000, 10000]} />
         <meshStandardMaterial
@@ -183,6 +181,9 @@ export function Scene() {
         <group position={[0, 0, 0]}>
           <FacilitatorPlaza />
         </group>
+
+        {/* Major Landmark: PayAI Payment Hub Dome */}
+        <PayAIDome position={[80, 0, -80]} />
 
         <group position={[0, 0, 400]}>
           <ServiceSkyline />
