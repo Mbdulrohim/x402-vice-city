@@ -40,6 +40,21 @@ export function PalmTree({
         <meshStandardMaterial color="#8B4513" roughness={0.8} />
       </mesh>
 
+      {/* Landscaping Uplight (Fake Glow) - Stronger */}
+      <mesh position={[0, 0.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0.5, 4, 32]} />
+        <meshBasicMaterial
+          color="#ffaa00"
+          transparent
+          opacity={0.6}
+          side={THREE.DoubleSide}
+          toneMapped={false} // Make it glow post-processing
+        />
+      </mesh>
+
+      {/* Actual light source (optional, keep low intensity/distance for perf) */}
+      {/* <pointLight position={[0, 2, 0]} color="#ffaa00" intensity={1} distance={8} /> */}
+
       {/* Fronds (Leaves) Top */}
       <group position={[2.5, 11.5, 2.5]}>
         {leaves.map((leaf, i) => (

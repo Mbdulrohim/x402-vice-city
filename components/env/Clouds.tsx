@@ -22,41 +22,33 @@ export function FloatingClouds() {
 
   return (
     <group ref={groupRef} position={[0, 100, 0]}>
-      {/* Scattered clouds */}
+      {/* Massive ambient cloud layer */}
       <Cloud
-        position={[-300, 20, -500]}
-        opacity={0.5}
-        speed={0.4}
-        segments={40}
-        bounds={[200, 40, 200]}
+        position={[0, 100, -500]}
+        opacity={0.8}
+        speed={0.1}
+        segments={100}
+        bounds={[3000, 400, 3000]}
+        volume={80}
+        color="#c0e6ff"
       />
+
+      {/* Foreground heavy clouds */}
       <Cloud
-        position={[300, 10, -300]}
-        opacity={0.5}
-        speed={0.4}
-        segments={40}
-        bounds={[200, 40, 200]}
-      />
-      <Cloud
-        position={[0, 40, -800]}
-        opacity={0.6}
-        speed={0.3}
+        position={[-500, 50, 200]}
+        opacity={0.7}
+        speed={0.15}
         segments={60}
-        bounds={[400, 80, 400]}
+        bounds={[1000, 200, 1000]}
+        volume={50}
       />
       <Cloud
-        position={[-150, 15, 200]}
-        opacity={0.4}
-        speed={0.5}
-        segments={30}
-        bounds={[150, 30, 150]}
-      />
-      <Cloud
-        position={[150, 25, 600]}
-        opacity={0.4}
-        speed={0.5}
-        segments={30}
-        bounds={[150, 30, 150]}
+        position={[500, 80, 500]}
+        opacity={0.7}
+        speed={0.15}
+        segments={60}
+        bounds={[1000, 200, 1000]}
+        volume={50}
       />
     </group>
   );
