@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Carter_One, Yellowtail, Montserrat } from "next/font/google";
+import {
+  Carter_One,
+  Yellowtail,
+  Montserrat,
+  Space_Grotesk,
+} from "next/font/google"; // 1. Update import
 import "./globals.css";
 
 const carter = Carter_One({
@@ -17,6 +22,12 @@ const yellowtail = Yellowtail({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  // 2. Configure font
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -76,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${carter.variable} ${yellowtail.variable} ${montserrat.variable} font-sans antialiased`}
+        className={`${carter.variable} ${yellowtail.variable} ${montserrat.variable} ${spaceGrotesk.variable} font-sans antialiased`} // 3. Add to className
       >
         {children}
       </body>

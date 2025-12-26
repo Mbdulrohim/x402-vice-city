@@ -71,7 +71,7 @@ export function WelcomeOverlay({ onClose }: WelcomeOverlayProps) {
           className="absolute bottom-8 right-8 text-white/80 text-xl transform -rotate-2"
           style={{ fontFamily: "var(--font-yellowtail)" }}
         >
-          The Vice City Update
+          Powered by PayAI
         </div>
       </div>
     </div>

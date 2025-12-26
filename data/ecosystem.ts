@@ -15,7 +15,7 @@ export const ecosystemProjects: EcosystemProject[] = [
     description:
       "Accept x402 payments on all networks including Avalanche, Base, Polygon, Sei, Solana, and more! Get started in less than 1 minute. Supports all tokens. No API Keys required.",
     category: "facilitator",
-    website: "https://payai.io",
+    website: "https://payai.network",
     logoPath: "/logos/facilitators/payai.svg",
   },
   {
