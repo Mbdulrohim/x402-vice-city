@@ -37,6 +37,15 @@ export const ecosystemProjects: EcosystemProject[] = [
     logoPath: "/logos/facilitators/corbits.png",
   },
   {
+    id: "dexter",
+    name: "Dexter.cash",
+    description:
+      "The first publicly available x402 v2 facilitator. Streamlines blockchain payments for APIs and AI agents, supporting multi-chain transactions and gasless payments via EIP-3009.",
+    category: "facilitator",
+    website: "https://dexter.cash",
+    logoPath: "/logos/facilitators/dexter.jpg",
+  },
+  {
     id: "mogami-facilitator",
     name: "Mogami Facilitator",
     description:
