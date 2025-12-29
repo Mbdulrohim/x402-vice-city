@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { OFFICIAL_TOKEN_ADDRESS } from "@/data/constants";
 
 interface WelcomeOverlayProps {
   onClose: () => void;
@@ -72,6 +73,28 @@ export function WelcomeOverlay({ onClose }: WelcomeOverlayProps) {
           style={{ fontFamily: "var(--font-yellowtail)" }}
         >
           Powered by PayAI
+        </div>
+
+        {/* Official Token - Bottom Left */}
+        <div
+          className="absolute bottom-8 left-8 hidden md:flex flex-col items-start p-3 rounded-xl bg-black/30 backdrop-blur-md border border-white/10 hover:bg-black/50 hover:border-[#00d9ff]/50 transition-all cursor-pointer group z-20"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigator.clipboard.writeText(OFFICIAL_TOKEN_ADDRESS);
+          }}
+        >
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-montserrat group-hover:text-[#00d9ff] transition-colors">
+              Official Token
+            </span>
+            <span className="text-[10px] text-white/50 opacity-0 group-hover:opacity-100 transition-opacity">
+              (Copy)
+            </span>
+          </div>
+          <code className="text-sm font-mono text-white tracking-wider">
+            {OFFICIAL_TOKEN_ADDRESS.slice(0, 4)}...
+            {OFFICIAL_TOKEN_ADDRESS.slice(-4)}
+          </code>
         </div>
       </div>
     </div>

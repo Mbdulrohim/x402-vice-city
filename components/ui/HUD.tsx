@@ -2,6 +2,7 @@
 
 import { x402Stats } from "@/data/stats";
 import { useCityStore } from "@/store/cityStore";
+import { OFFICIAL_TOKEN_ADDRESS } from "@/data/constants";
 
 export function HUD() {
   const { currentDistrict, setCurrentDistrict } = useCityStore();
@@ -29,6 +30,26 @@ export function HUD() {
           >
             Explore the Ecosystem
           </p>
+          <div
+            className="mt-3 py-1.5 px-3 bg-white/5 rounded border border-white/10 hover:bg-white/10 hover:border-white/20 transition-colors cursor-pointer group"
+            onClick={() => {
+              navigator.clipboard.writeText(OFFICIAL_TOKEN_ADDRESS);
+              // You might want to add a toast notification here in a real app
+            }}
+          >
+            <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-0.5">
+              Official Token
+            </p>
+            <div className="flex items-center gap-2">
+              <code className="text-[10px] md:text-xs text-[#00d9ff] font-mono">
+                {OFFICIAL_TOKEN_ADDRESS.slice(0, 4)}...
+                {OFFICIAL_TOKEN_ADDRESS.slice(-4)}
+              </code>
+              <span className="text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                (Click to Copy)
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
